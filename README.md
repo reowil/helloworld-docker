@@ -20,7 +20,12 @@ Guide: [https://spring.io/guides/gs/spring-boot-docker/](https://spring.io/guide
 
 Note: `pom.xml` contains an execution element which (if not commented out...) automatically runs dockerfile:push when you do mvn install. 
 
-### Running app in Docker container  
+## Using Docker
+
+### Building Docker image ("by hand", not using Maven and the Spotify plugin)
+`docker build -t halla --build-arg JAR_FILE=target/helloworld-docker-1.0-SNAPSHOT.jar` (using the right file name)
+
+### Running app in Docker container
 `docker run -p 8080:8080 -t hellodocker/helloworld-docker` 
 
 Include a `-d` to run in detached mode (i.e. in the background). 
@@ -30,3 +35,7 @@ Include a `-d` to run in detached mode (i.e. in the background).
 
 ### Stop the container 
 `docker container stop <name/container_id>`
+
+### Handling Docker images
+- List installed images: `docker image ls`
+- Remove image: `docker image rm <name>`
