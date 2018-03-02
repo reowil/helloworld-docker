@@ -13,6 +13,8 @@ Guide: [https://spring.io/guides/gs/spring-boot-docker/](https://spring.io/guide
 ### Building Docker image 
 `mvn install dockerfile:build` 
 
+*Note:* For this to work (using the Spotify plugin on Windows), Daemon on tcp://localhost:2375 has to be exposed without TLS. Which is not a good idea. (This is done in the Docker Settings.) *Remember to stop exposing the daemon without TLS when you're done playing.* 
+
 ### Pushing Docker image 
 `mvn dockerfile:push` 
 
